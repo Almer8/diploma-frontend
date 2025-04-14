@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --background: #F9FAFC;
+  --primary: #5C85D6;
+  --secondary: #A5C3E8;
+  --accent: #D6E8FA;
+  --text: #0B0D11;
+  --text-container: #FFFFFFD9;
+  --search-field: #E0E4E8;
+  --card: #EAF2FC;
+  --card-border: #A5C3E8;
+  --green: rgba(123, 255, 143, 0.8);
+}

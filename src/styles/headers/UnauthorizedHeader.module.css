@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    font-family: Inter, serif;
+    font-size: 45px;
+    background-color: var(--accent);
+    padding: 10px;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.logo{
+    background-color: var(--secondary);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.headertext{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary);
+    border-radius: 8px;
+    padding: 5px 60px;
+}

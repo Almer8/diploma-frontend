@@ -1,0 +1,39 @@
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.title{
+    font-size: 48px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    padding: 18px;
+    gap: 20px;
+    border-radius: 10px;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input{
+    padding: 10px;
+    font-family: Inter, serif;
+    font-size: 30px;
+    border: 1px solid var(--primary);
+}
+.submit{
+    width: 50%;
+    align-self: center;
+    background-color: var(--green);
+    font-family: Inter, serif;
+    font-size: 30px;
+    border-radius: 8px;
+}

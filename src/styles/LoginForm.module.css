@@ -1,0 +1,68 @@
+.container{
+    background-color: var(--accent);
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.choice{
+    display: flex;
+    background-color: var(--text-container);
+    border-radius: 0 0 8px 8px;
+}
+
+.leftchoice{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-family: Inter, serif;
+    font-size: 40px;
+    border-right: 1px solid black;
+    border-radius: 0 0 0 8px;
+}
+
+.rightchoice{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-family: Inter, serif;
+    font-size: 40px;
+    border-radius: 0 0 8px 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.title{
+    font-family: Inter, serif;
+    font-size: 30px;
+}
+.textbutton{
+    align-self: flex-end;
+}
+.input{
+    padding: 5px;
+    font-family: Inter, serif;
+    font-size: 30px;
+    border-radius: 8px;
+    background-color: var(--text-container);
+}
+
+.submit{
+    font-family: Inter, serif;
+    background-color: var(--text-container);
+    font-size: 30px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.green{
+    background-color: var(--green);
+}

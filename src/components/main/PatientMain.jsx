@@ -8,6 +8,7 @@ import {mapRole} from "../../utils/roleMapper";
 import {getFlagImgUrl} from "../../utils/countryFlags";
 import {mapCategory} from "../../utils/categoriesMapper";
 import {formatDate, formatTime} from "../../utils/timeUtils";
+import {Link} from "react-router";
 const PatientMain = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -100,7 +101,7 @@ const PatientMain = () => {
                                     <div className={styles.textfield}>{`${doctor.surname} ${doctor.name} ${doctor.patronymic? doctor.patronymic : ""} `}</div>
                                     <div className={styles.textfield}>{mapRole(doctor.schedule.role)}</div>
                                     <div className={`${styles.textfield} ${styles.scrollable}`}>{doctor.schedule.services.map(s=>s.name).join(", ")}</div>
-                                    <div className={styles.button}>Записатись</div>
+                                    <Link to={`/doctor/${doctor.id}`}><div className={styles.button}>Записатись</div></Link>
                                 </div>
                                 <div className={styles.doctormiddle}>
                                     <img className={styles.flag} src={getFlagImgUrl(doctor.schedule.country)} alt="flag"/>

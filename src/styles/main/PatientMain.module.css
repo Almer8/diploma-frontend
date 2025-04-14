@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 70px 50px;
+    min-height: 0;
 }
 .input{
     font-family: Inter, serif;

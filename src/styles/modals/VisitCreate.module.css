@@ -1,0 +1,41 @@
+label {
+    display: block;
+    font-size: 20px;
+}
+
+.title{
+    font-size: 48px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    padding: 18px;
+    gap: 20px;
+    border-radius: 10px;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.textfield{
+    border: 1px solid var(--primary);
+    background-color: white;
+    font-family: Inter, serif;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+
+}
+.submit{
+    padding: 5px 10px;
+    align-self: center;
+    background-color: var(--green);
+    font-family: Inter, serif;
+    font-size: 30px;
+    border-radius: 8px;
+}

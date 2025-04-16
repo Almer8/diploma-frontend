@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import Auth from "./components/Auth";
 import MainRedirect from "./components/MainRedirect";
 import DoctorView from "./components/DoctorView";
+import PatientVisitsView from "./components/PatientVisitsView";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Route path="/login" element={<Auth/>} />
               <Route path="/main" element={<MainRedirect/>} />
               <Route path="/doctor/:id" element={<DoctorView/>} />
+              <Route path="/visits" element={<PatientVisitsView/>} />
 
           </Route>
 

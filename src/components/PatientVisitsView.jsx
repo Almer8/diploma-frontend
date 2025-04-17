@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import styles from "../styles/PatientVisitView.module.css";
+import styles from "../styles/PatientVisitsView.module.css";
 import axios from "../utils/axiosInstance";
 import {formatDate, formatTime} from "../utils/timeUtils";
 import {mapRole} from "../utils/roleMapper";
 import {mapStatus} from "../utils/statusMapper";
+import {Link} from "react-router";
+import {handlePay} from "../utils/payVisit";
 
 const PatientVisitsView = () => {
     const [page, setPage] = useState(0);
@@ -38,32 +40,6 @@ const PatientVisitsView = () => {
 
     }, [page]);
 
-    const handlePay = (id) =>{
-        axios.get(`/visit/pay/${id}`).then(res => {
-
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = 'https://www.liqpay.ua/api/3/checkout';
-            form.target = '_blank';
-            form.acceptCharset = 'utf-8';
-            const dataInput = document.createElement('input');
-            dataInput.type = 'hidden';
-            dataInput.name = 'data';
-            dataInput.value = res.data.data;
-            const signatureInput = document.createElement('input');
-            signatureInput.type = 'hidden';
-            signatureInput.name = 'signature';
-            signatureInput.value = res.data.signature;
-
-            form.appendChild(dataInput);
-            form.appendChild(signatureInput);
-            document.body.appendChild(form);
-            form.submit();
-            document.body.removeChild(form);
-        })
-
-    }
-
     return (
         <div className={styles.content}>
             {visits.map((visit) => {
@@ -91,7 +67,7 @@ const PatientVisitsView = () => {
                                         </button>
                                     )
                                     : null}
-                                <div className={styles.details}>Подивитись деталі</div>
+                                <Link to={"/visit/view"} state={{visit: visit,doctor: doctor}}><div className={styles.details}>Подивитись деталі</div></Link>
                             </div>
                         </div>
                         <div className={styles.right}>

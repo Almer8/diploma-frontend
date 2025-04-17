@@ -6,9 +6,17 @@
     background-color: var(--accent);
     border: 1px solid var(--secondary);
     border-radius: 8px;
-    margin: auto 50px;
-    width: 70%;
-    height: 820px;
+    margin: auto;
+    width: 95%;
+    height: 95%;
+    align-self: center;
+}
+.up{
+    display: flex;
+    justify-content: space-between;
+}
+.down{
+
 }
 
 .visitCard{
@@ -25,7 +33,9 @@
 .left{
     display: flex;
     flex-direction: column;
-    gap: 16px;
+}
+label{
+    margin: 10px 0;
 }
 
 .textfield{
@@ -60,9 +70,10 @@
     background-color: #333333;
     display: flex;
     align-items: center;
-    padding: 5px 8px;
+    padding: 10px 20px;
     gap: 10px;
     border-radius: 8px;
+    width: 260px;
 }
 .paybuttonlogo{
     width: 30px;
@@ -70,21 +81,35 @@
 
 .paybuttontext{
     font-family: Inter, serif;
-    font-size: 18px;
+    font-size: 25px;
     color: white;
 }
 
-.details{
+.cancelbutton{
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: var(--red);
+    text-align: center;
+    font-family: Inter, serif;
+    font-size: 25px;
+    width: 260px;
+}
+
+.joinbutton{
     background-color: var(--primary);
     display: flex;
     align-items: center;
-    padding: 5px 8px;
+    padding: 10px 20px;
     gap: 10px;
     border-radius: 8px;
+    width: 260px;
+}
+.joinbuttonbuttonlogo{
+    width: 30px;
+}
+.joinbuttonbuttontext{
     font-family: Inter, serif;
-    font-size: 18px;
-    align-self: center;
-    justify-self: center;
+    font-size: 25px;
 }
 
 .right{
@@ -96,7 +121,7 @@
 }
 
 .avatar{
-
+    width: 240px;
 }
 .paginationbuttons{
     display: flex;
@@ -116,4 +141,38 @@
     cursor: pointer;
     width: fit-content;
 }
+.down{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 10px;
+    flex: 1;
+}
+.textcontainer{
+    height: 40%;
+    border: 1px solid var(--primary);
+    background-color: white;
+    font-family: Inter, serif;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
 
+.diagnosis{
+    display: flex;
+    gap: 5px;
+}
+
+.texttitle{
+    position: relative;
+    top: 0;
+    bottom: 0;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.recommendations{
+
+}

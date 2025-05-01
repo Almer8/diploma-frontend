@@ -7,8 +7,8 @@ const PatientHeader = () => {
             <Link to={"/main"}><div className={styles.logo}>Logo</div></Link>
             <div className={styles.content}>
                 <Link to={"/visits"}><div className={styles.button}>Прийоми</div></Link>
-                <div className={styles.button}>Тестування</div>
-                <div className={styles.button}>Поділись історією</div>
+                <Link to={"/survey"}><div className={styles.button}>Тестування</div></Link>
+                <Link to={"/stories"}><div className={styles.button}>Поділись історією</div></Link>
                 <div className={styles.button}><img src={"/settings.svg"} alt={"settingsicon"}/> </div>
             </div>
         </div>

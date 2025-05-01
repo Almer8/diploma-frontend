@@ -67,8 +67,8 @@ const PatientMain = () => {
 
     useEffect(() => {
         axios.get("/visit?status=PLANNED&status=PAYED&page=0&size=1").then(res => {
-            if (res.data.length > 0) {
-                const visitInfo = res.data[0];
+            if (res.data.content.length > 0) {
+                const visitInfo = res.data.content[0];
                 setVisit(prev => ({ ...prev, visitInfo }));
 
                 axios.get(`/user/${visitInfo.doctorId}`).then(res2 => {
@@ -130,9 +130,10 @@ const PatientMain = () => {
             <div className={styles.right}>
                 <div className={styles.visit}>
                     <div className={styles.textarea}>
+                        {!visit && `Немає запланованного візиту`}
                         {visit?.doctor && (
                             <>
-                                <div>{`${visit.doctor.surname} ${visit.doctor.name} ${visit.doctor.patronymic ? visit.doctor.patronymic: ""}`}</div>
+                                <div>{`${visit.doctor.surname} ${visit.doctor.name} ${visit.doctor.patronymic ? visit.doctor.patronymic : ""}`}</div>
                                 <div>{mapRole(visit.doctor.schedule.role)}</div>
                                 <div>{formatDate(visit.visitInfo.startTime)}</div>
                                 <div>{`${formatTime(visit.visitInfo.startTime)} - ${formatTime(visit.visitInfo.endTime)}`}</div>
@@ -140,9 +141,8 @@ const PatientMain = () => {
                             </>
                         )}
                     </div>
-                    <div className={styles.button}>
-                        Подивитись деталі
-                    </div>
+                    {visit?.doctor && <Link to={"/visit/view"} state={{visit: visit?.visitInfo,doctor: visit?.doctor}}><div className={styles.button}>Подивитись деталі</div></Link>}
+
                 </div>
 
                 <div className={styles.button}>Написати в підтримку</div>

@@ -1,0 +1,58 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    padding: 20px 50px;
+    gap: 20px;
+}
+
+.input{
+    font-family: Inter, serif;
+    font-size: 20px;
+    background-color: var(--search-field);
+    border-radius: 8px;
+    padding: 10px 5px;
+}
+
+.select{
+
+}
+
+.richinput{
+    font-family: Inter, serif;
+    font-size: 20px;
+    padding: 10px;
+    background-color: var(--search-field);
+    border-radius: 8px;
+    height: 300px;
+    width: 600px;
+    resize: none;
+}
+
+.agreement{
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox{
+
+}
+
+.text{
+    font-family: Inter, serif;
+    font-size: 20px;
+}
+
+.submit{
+    background-color: var(--primary);
+    padding: 10px 20px;
+    font-family: Inter, serif;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.disabled{
+    background-color: grey;
+    color: white;
+
+}

@@ -7,6 +7,8 @@ import MainRedirect from "./components/MainRedirect";
 import DoctorView from "./components/DoctorView";
 import PatientVisitsView from "./components/PatientVisitsView";
 import PatientVisitView from "./components/PatientVisitView";
+import AnonStoriesView from "./components/AnonStoriesView";
+import EmotionSurvey from "./components/EmotionSurvey";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
               <Route path="/doctor/:id" element={<DoctorView/>} />
               <Route path="/visits" element={<PatientVisitsView/>} />
               <Route path="/visit/view" element={<PatientVisitView/>} />
+              <Route path="/stories" element={<AnonStoriesView/>} />
+              <Route path="/survey" element={<EmotionSurvey/>} />
 
           </Route>
 

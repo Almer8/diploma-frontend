@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -15,6 +17,11 @@
     "react-router": "^7.5.0",
     "react-router-dom": "^7.5.0",
     "react-scripts": "5.0.1",
+    "react-select": "^5.10.1",
+    "recordrtc": "^5.6.2",
+    "survey-core": "^2.0.5",
+    "survey-react-ui": "^2.0.5",
+    "surveyjs-widgets": "^1.12.32",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

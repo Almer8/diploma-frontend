@@ -1,0 +1,42 @@
+.results{
+    display: flex;
+    flex-direction: column;
+    font-family: Inter, serif;
+    font-size: 25px;
+    padding-top: 100px;
+    align-items: center;
+    gap: 10px;
+}
+.recommendations{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 100px;
+    align-items: center;
+}
+
+.card{
+    background-color: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 10px 5px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.additional{
+
+}
+
+.secondary{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.warning{
+    width: fit-content;
+    font-weight: bold;
+}

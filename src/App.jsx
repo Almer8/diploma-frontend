@@ -9,6 +9,7 @@ import PatientVisitsView from "./components/PatientVisitsView";
 import PatientVisitView from "./components/PatientVisitView";
 import AnonStoriesView from "./components/AnonStoriesView";
 import EmotionSurvey from "./components/EmotionSurvey";
+import Settings from "./components/Settings";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/visit/view" element={<PatientVisitView/>} />
               <Route path="/stories" element={<AnonStoriesView/>} />
               <Route path="/survey" element={<EmotionSurvey/>} />
+              <Route path="/settings" element={<Settings/>} />
 
           </Route>
 

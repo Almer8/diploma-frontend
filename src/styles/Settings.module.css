@@ -1,0 +1,59 @@
+.textfield{
+    border: 1px solid var(--primary);
+    background-color: white;
+    font-family: Inter, serif;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-family: Inter, serif;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.red{
+    background-color: var(--red);
+}
+
+.green{
+    background-color: var(--green);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    height: 100%;
+}
+.up{
+    display: flex;
+    justify-content: space-between;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.down{
+    margin-bottom: 50px;
+    margin-top: auto;
+}
+.avatar{
+    width: 240px;
+    height: 350px;
+}
+

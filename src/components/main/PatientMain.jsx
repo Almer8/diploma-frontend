@@ -9,6 +9,7 @@ import {getFlagImgUrl} from "../../utils/countryFlags";
 import {mapCategory} from "../../utils/categoriesMapper";
 import {formatDate, formatTime} from "../../utils/timeUtils";
 import {Link} from "react-router";
+import SubmitSupportTicket from "../modals/SubmitSupportTicket";
 const PatientMain = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,8 +29,14 @@ const PatientMain = () => {
         });
         formData.append('r', jsonBlob);
 
-        axios.patch("/user/update", formData).then(res=>{
+        axios.patch("/user/update", formData).then(()=>{
             setIsSetup(true)
+        })
+    }
+
+    const sendReport = (data) =>{
+        axios.post("/ticket", data).then(()=>{
+            setIsModalOpen(false)
         })
     }
 
@@ -83,6 +90,10 @@ const PatientMain = () => {
             setIsModalOpen(false);
         }
     };
+    const handleReportModal = () => {
+        setComponent(<SubmitSupportTicket callback={sendReport} />)
+        setIsModalOpen(true);
+    }
 
     return (
         <div className={styles.content}>
@@ -145,7 +156,7 @@ const PatientMain = () => {
 
                 </div>
 
-                <div className={styles.button}>Написати в підтримку</div>
+                <div className={styles.button} onClick={()=>handleReportModal()}>Написати в підтримку</div>
             </div>
 
         </div>

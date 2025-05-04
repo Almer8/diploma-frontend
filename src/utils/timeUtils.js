@@ -18,5 +18,5 @@ export const formatVisitTime = (startTime, endTime) => {
     const start = `${pad(startDate.getHours())}:${pad(startDate.getMinutes())}`;
     const end = `${pad(endDate.getHours())}:${pad(endDate.getMinutes())}`;
 
-    return `${date} ${start}-${end}`;
+    return `${date} ${start} - ${end}`;
 };

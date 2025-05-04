@@ -4,12 +4,12 @@ import Layout from "./components/Layout";
 import Auth from "./components/Auth";
 import MainRedirect from "./components/MainRedirect";
 import DoctorView from "./components/DoctorView";
-import PatientVisitView from "./components/PatientVisitView";
 import AnonStoriesView from "./components/AnonStoriesView";
 import EmotionSurvey from "./components/EmotionSurvey";
 import Settings from "./components/Settings";
 import RedirectComponent from "./components/RedirectComponent";
 import VisitsRedirect from "./components/VisitsRedirect";
+import VisitRedirect from "./components/VisitRedirect";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
               <Route path="/main" element={<MainRedirect/>} />
               <Route path="/doctor/:id" element={<DoctorView/>} />
               <Route path="/visits" element={<VisitsRedirect/>} />
-              <Route path="/visit/view" element={<PatientVisitView/>} />
+              <Route path="/visit/view" element={<VisitRedirect/>} />
               <Route path="/stories" element={<AnonStoriesView/>} />
               <Route path="/survey" element={<EmotionSurvey/>} />
               <Route path="/settings" element={<Settings/>} />

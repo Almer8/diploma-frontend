@@ -34,7 +34,7 @@ const DoctorVisitsView = () => {
                             newPatients[id] = res.data;
                         }
                     } catch (err) {
-                        console.error(`Failed to load doctor with ID ${id}`, err);
+                        console.error(`Failed to load user with ID ${id}`, err);
                     }
                 }));
 
@@ -42,7 +42,7 @@ const DoctorVisitsView = () => {
             })
             .catch(err => console.error(err));
 
-    }, [page]);
+    }, [page, patientsMap]);
 
     return (
         <div className={styles.content}>
@@ -62,7 +62,7 @@ const DoctorVisitsView = () => {
                                     className={styles.textfield}>{`${formatVisitTime(visit.startTime, visit.endTime)}`}</div>
                                 <div
                                     className={`${styles.textfield}`}>Статус: {mapStatus(visit.status).toLowerCase()}</div>
-                                <Link to={"/visit/view"} state={{visit: visit,patient: patient}}><div className={styles.details}>Подивитись деталі</div></Link>
+                                <Link to={"/visit/view"} state={{visit: visit,user: patient}}><div className={styles.details}>Подивитись деталі</div></Link>
                             </div>
                         </div>
                         <div className={styles.right}>

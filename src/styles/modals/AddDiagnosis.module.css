@@ -1,0 +1,48 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    padding: 20px 50px;
+    gap: 20px;
+}
+
+.input{
+    font-family: Inter, serif;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 10px 5px;
+}
+
+.submit{
+    background-color: var(--primary);
+    padding: 10px 20px;
+    font-family: Inter, serif;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.diagnosiscontainer{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 1000px;
+    overflow-y: scroll;
+    background-color: var(--search-field);
+
+}
+
+.diagnosis{
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Inter, serif;
+    font-size: 20px;
+}
+
+.diagnosiscontainer > .diagnosis:nth-child(even){
+    background-color: var(--search-field);
+}
+
+.diagnosiscontainer > .diagnosis:nth-child(odd){
+    background-color: white;
+}

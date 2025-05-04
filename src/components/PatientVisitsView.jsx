@@ -38,7 +38,7 @@ const PatientVisitsView = () => {
             })
             .catch(err => console.error(err));
 
-    }, [page]);
+    }, [page, doctorsMap]);
 
     return (
         <div className={styles.content}>
@@ -67,7 +67,7 @@ const PatientVisitsView = () => {
                                         </button>
                                     )
                                     : null}
-                                <Link to={"/visit/view"} state={{visit: visit,doctor: doctor}}><div className={styles.details}>Подивитись деталі</div></Link>
+                                <Link to={"/visit/view"} state={{visit: visit,user: doctor}}><div className={styles.details}>Подивитись деталі</div></Link>
                             </div>
                         </div>
                         <div className={styles.right}>

@@ -1,16 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import styles from "../styles/PatientVisitView.module.css"
-import {useLocation, useNavigate} from "react-router";
+import {useNavigate} from "react-router";
 import {mapRole} from "../utils/roleMapper";
 import {formatDate, formatTime} from "../utils/timeUtils";
 import {mapStatus} from "../utils/statusMapper";
 import {handlePay} from "../utils/payVisit";
 import axios from "../utils/axiosInstance";
 
-const PatientVisitView = () => {
-    const location = useLocation()
-    const visit = location.state?.visit;
-    const doctor = location.state?.doctor;
+const PatientVisitView = ({visit, user}) => {
 
     const [diagnosis, setDiagnosis] = useState(null)
 
@@ -25,19 +22,18 @@ const PatientVisitView = () => {
         }
         const ids = visit.diagnosis
         axios.get(`/diagnosis?${ids.map(id => `ids=${id}`).join('&')}`,).then(response => {
-            console.log(response.data._embedded.diagnosis);
             setDiagnosis(response.data._embedded.diagnosis);
         })
     }, [visit, navigate]);
 
     const cancelVisit = () =>{
         console.log("Cancel");
-        axios.delete(`/visit/${visit.id}`).then(response => {
+        axios.delete(`/visit/${visit.id}`).then(() => {
             navigate("/visits");
         }).catch(error => console.log(error));
     }
 
-    if(!visit && !doctor) return null
+    if(!visit && !user) return null
 
     return (
         <div className={styles.content}>
@@ -45,9 +41,9 @@ const PatientVisitView = () => {
                 <div className={styles.left}>
                     <label htmlFor={"name"}>Лікар</label>
                     <div id={"name"}
-                         className={styles.textfield}>{`${doctor.surname} ${doctor.name} ${doctor.patronymic || ""}`}</div>
+                         className={styles.textfield}>{`${user.surname} ${user.name} ${user.patronymic || ""}`}</div>
                     <label htmlFor={"role"}>Спеціальність</label>
-                    <div id={"role"} className={styles.textfield}>{mapRole(doctor.schedule.role)}</div>
+                    <div id={"role"} className={styles.textfield}>{mapRole(user.schedule.role)}</div>
                     <label htmlFor={"time"}>Час</label>
                     <div id={"time"}
                          className={styles.textfield}>{`${formatDate(visit.startTime)} ${formatTime(visit.startTime)} - ${formatTime(visit.endTime)}`}</div>
@@ -81,7 +77,7 @@ const PatientVisitView = () => {
                     : null}
             </div>
             <div className={styles.right}>
-                <img className={styles.avatar} src={doctor.avatar || "/default.png"} alt="doctoravatar"/>
+                <img className={styles.avatar} src={user.avatar || "/default.png"} alt="useravatar"/>
             </div>
         </div>
             <div className={styles.down}>

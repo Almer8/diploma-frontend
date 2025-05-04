@@ -5,6 +5,7 @@ import {getId} from "../utils/auth";
 import { Uploader } from "uploader";
 import { UploadButton } from "react-uploader";
 import {useNavigate} from "react-router";
+import {avatarPath} from "../utils/avatarUtils";
 
 const Settings = () => {
     const [profile, setProfile] = useState()
@@ -31,7 +32,7 @@ const Settings = () => {
                 setProfile(response.data);
                 return;
             }
-            setProfile({...response.data, avatar: response.data.avatar.replace("D:\\Java\\diploma-filestorage\\avatars\\", "http://localhost:8080/avatars/")});
+            setProfile({...response.data, avatar: avatarPath(response.data.avatar)});
         })
     },[])
 

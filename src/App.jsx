@@ -1,15 +1,15 @@
 import './App.css';
 import {Route, Routes} from "react-router";
-import RedirectComponent from "./components/RedirectComponent";
 import Layout from "./components/Layout";
 import Auth from "./components/Auth";
 import MainRedirect from "./components/MainRedirect";
 import DoctorView from "./components/DoctorView";
-import PatientVisitsView from "./components/PatientVisitsView";
 import PatientVisitView from "./components/PatientVisitView";
 import AnonStoriesView from "./components/AnonStoriesView";
 import EmotionSurvey from "./components/EmotionSurvey";
 import Settings from "./components/Settings";
+import RedirectComponent from "./components/RedirectComponent";
+import VisitsRedirect from "./components/VisitsRedirect";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
               <Route path="/login" element={<Auth/>} />
               <Route path="/main" element={<MainRedirect/>} />
               <Route path="/doctor/:id" element={<DoctorView/>} />
-              <Route path="/visits" element={<PatientVisitsView/>} />
+              <Route path="/visits" element={<VisitsRedirect/>} />
               <Route path="/visit/view" element={<PatientVisitView/>} />
               <Route path="/stories" element={<AnonStoriesView/>} />
               <Route path="/survey" element={<EmotionSurvey/>} />

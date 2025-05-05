@@ -10,6 +10,7 @@ import Settings from "./components/Settings";
 import RedirectComponent from "./components/RedirectComponent";
 import VisitsRedirect from "./components/VisitsRedirect";
 import VisitRedirect from "./components/VisitRedirect";
+import DoctorPatientsView from "./components/DoctorPatientsView";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
               <Route path="/stories" element={<AnonStoriesView/>} />
               <Route path="/survey" element={<EmotionSurvey/>} />
               <Route path="/settings" element={<Settings/>} />
-
+              <Route path="/patients" element={<DoctorPatientsView/>}/>
           </Route>
 
       </Routes>

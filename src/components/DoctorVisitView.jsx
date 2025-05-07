@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from "../styles/DoctorVisitView.module.css";
-import { useNavigate } from "react-router";
+import {Link, useNavigate} from "react-router";
 import { formatDate, formatTime } from "../utils/timeUtils";
 import { mapStatus } from "../utils/statusMapper";
 import axios from "../utils/axiosInstance";
@@ -89,7 +89,7 @@ const DoctorVisitView = ({ visit, user }) => {
                     {visitState.status === "PAYED" ? (
                         <button className={styles.joinbutton}>
                             <img className={styles.joinbuttonbuttonlogo} src={"/video.svg"} alt="joinbutton" />
-                            <div className={styles.joinbuttonbuttontext}>Приєднатися</div>
+                            <Link to={`/call/${visit.id}`}><div className={styles.joinbuttonbuttontext}>Приєднатися</div></Link>
                         </button>
                     ) : null}
                     {visitState.status !== "CANCELED" ? (

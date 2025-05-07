@@ -12,6 +12,7 @@ import VisitsRedirect from "./components/VisitsRedirect";
 import VisitRedirect from "./components/VisitRedirect";
 import DoctorPatientsView from "./components/DoctorPatientsView";
 import PatientView from "./components/PatientView";
+import CallPage from "./components/CallPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/settings" element={<Settings/>} />
               <Route path="/patients" element={<DoctorPatientsView/>}/>
               <Route path="/patient/:id" element={<PatientView/>}/>
+              <Route path="/call/:id" element={<CallPage/>}/>
           </Route>
 
       </Routes>

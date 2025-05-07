@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from "../styles/PatientVisitView.module.css"
-import {useNavigate} from "react-router";
+import {Link, useNavigate} from "react-router";
 import {mapRole} from "../utils/roleMapper";
 import {formatDate, formatTime} from "../utils/timeUtils";
 import {mapStatus} from "../utils/statusMapper";
@@ -67,7 +67,7 @@ const PatientVisitView = ({visit, user}) => {
                 {visit.status === "PAYED" ?(
                         <button className={styles.joinbutton}>
                             <img className={styles.joinbuttonbuttonlogo} src={"/video.svg"} alt="joinbutton" />
-                            <div className={styles.joinbuttonbuttontext}>Приєднатися</div>
+                            <Link to={`/call/${visit.id}`}><div className={styles.joinbuttonbuttontext}>Приєднатися</div></Link>
                         </button>
                     )
                     : null}

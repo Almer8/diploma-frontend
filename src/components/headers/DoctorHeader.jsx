@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/headers/DoctorHeader.module.css';
+import styles from '../../styles/headers/AuthorizedHeader.module.css';
 import {Link} from "react-router";
 const DoctorHeader = () => {
     return (

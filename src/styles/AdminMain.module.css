@@ -1,0 +1,45 @@
+.content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 16px;
+
+
+}
+
+.textfield {
+    border: 1px solid var(--primary);
+    background-color: white;
+    font-family: Inter, serif;
+    font-size: 36px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    width: 100%;
+    word-break: break-word;
+}
+
+.button {
+    justify-content: center;
+    margin-left: auto;
+    align-items: center;
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    font-size: 36px;
+    font-family: Inter, serif;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+}

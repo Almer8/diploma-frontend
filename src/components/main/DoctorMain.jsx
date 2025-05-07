@@ -6,6 +6,7 @@ import Modal from "../Modal";
 import SubmitSupportTicket from "../modals/SubmitSupportTicket";
 import DoctorSetup from "../modals/DoctorSetup";
 import {formatVisitTime} from "../../utils/timeUtils";
+import {Link} from "react-router";
 
 const DoctorMain = () => {
 
@@ -105,7 +106,7 @@ const DoctorMain = () => {
                                         </div>
                                         <div className={styles.textfield}>{visit.service}</div>
                                         <div className={styles.textfield}>{formatVisitTime(visit.startTime, visit.endTime)}</div>
-                                        <div className={styles.button}>Деталі прийому</div>
+                                        <Link to={"/visit/view"} state={{visit: visit,user: patient}}><div className={styles.button}>Деталі прийому</div></Link>
 
                                     </div>
                                 );

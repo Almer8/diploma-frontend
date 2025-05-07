@@ -60,6 +60,10 @@ const Settings = () => {
             navigate("/");
         })
     }
+    const logout = () => {
+        localStorage.removeItem("token");
+        navigate("/");
+    }
 
     return profile && (
         <div className={styles.container}>
@@ -100,6 +104,7 @@ const Settings = () => {
                     <button className={`${styles.button} ${styles.red}`} onClick={() => deletePhoto()}>Видалити</button>
                 </div>
             </div>
+            <button className={`${styles.button} ${styles.red} ${styles.down}`} onClick={()=>logout()}>Вийти з акаунту</button>
             <button className={`${styles.button} ${styles.red} ${styles.down}`} onClick={()=>deleteProfile()}>Видалити аккаунт</button>
         </div>
     );

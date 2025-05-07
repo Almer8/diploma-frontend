@@ -3,6 +3,7 @@ import {getUserRoles} from "../utils/auth";
 import UnauthorizedHeader from "./headers/UnauthorizedHeader";
 import PatientHeader from "./headers/PatientHeader";
 import DoctorHeader from "./headers/DoctorHeader";
+import AdminHeader from "./headers/AdminHeader";
 
 const HeaderRedirect = () => {
 
@@ -21,6 +22,11 @@ const HeaderRedirect = () => {
     if(roles.includes('DOCTOR')){
         return (
             <DoctorHeader/>
+        )
+    }
+    if(roles.includes('ADMIN')){
+        return (
+            <AdminHeader/>
         )
     }
 
